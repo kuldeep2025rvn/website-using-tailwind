@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AnimeVerse</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .carousel-slide {
+      transition: transform 0.7s ease-in-out;
+    }
+  </style>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Poppins', 'sans-serif'],
+          },
+          colors: {
+            primary: '#ff007f',
+            glass: 'rgba(255, 255, 255, 0.1)',
+            darkGlass: 'rgba(0, 0, 0, 0.3)',
+          }
+        }
+      }
+    };
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-gradient-to-br from-black via-gray-900 to-gray-950 text-white font-sans">
+
+  <!-- 🔥 Navbar -->
+  <header class="fixed top-0 w-full z-50 bg-glass backdrop-blur-md border-b border-gray-800 shadow-lg">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-4 py-4">
+      <h1 class="text-xl sm:text-2xl font-bold text-primary">AnimeVerse</h1>
+
+      <nav class="hidden md:flex space-x-6 text-sm sm:text-base">
+        <a href="#" class="hover:text-primary transition">Home</a>
+        <a href="./trending.html" class="hover:text-primary transition">Trending</a>
+        <a href="#" class="hover:text-primary transition">Genres</a>
+        <a href="#" class="hover:text-primary transition">Contact</a>
+      </nav>
+
+      <!-- Mobile Toggle -->
+      <div class="md:hidden">
+        <button id="toggleBtn" class="text-white focus:outline-none text-2xl">☰</button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden md:hidden px-4 pb-4">
+      <a href="#" class="block py-2 hover:text-primary">Home</a>
+      <a href="#" class="block py-2 hover:text-primary">Trending</a>
+      <a href="#" class="block py-2 hover:text-primary">Genres</a>
+      <a href="#" class="block py-2 hover:text-primary">Contact</a>
+    </div>
+  </header>
+
+  <!-- 🔥 HERO with Carousel (HD images) -->
+  <section class="relative w-full overflow-hidden h-[100vh] pt-26">
+    <div id="carousel" class="flex h-full w-full carousel-slide">
+      <div class="min-w-full h-full bg-no-repeat bg-cover bg-center bg-fixed " style="background-image: url('img/your\ name\ cover.jpg')"></div>
+      <div class="min-w-full h-full bg-no-repeat bg-cover bg-center bg-fixed" style="background-image: url('img/The\ Imaginary.jpg')"></div>
+      <div class="min-w-full h-full bg-no-repeat bg-cover bg-center bg-fixed" style="background-image: url('img/Kakegurui.webp')"></div>
+      <div class="min-w-full h-full bg-no-repeat bg-cover bg-center bg-fixed" style="background-image: url('img/Castlevania.jpg')"></div>
+    </div>
+
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-black/60 flex items-center justify-center text-center px-4">
+      <div class="bg-darkGlass p-6 sm:p-10 rounded-2xl max-w-3xl text-center backdrop-blur-md shadow-2xl w-full">
+        <h2 class="text-2xl sm:text-4xl font-bold mb-4">Explore the Epic World of Anime</h2>
+        <p class="text-gray-300 mb-6 text-sm sm:text-base">Stream your favorite shows and discover new anime every week.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <input type="text" placeholder="Search anime..." class="px-4 py-2 sm:px-6 sm:py-3 rounded-full bg-white/10 text-white placeholder-gray-400 w-full focus:outline-none focus:ring-2 focus:ring-primary">
+          <button class="bg-primary text-white px-6 py-3 rounded-full hover:bg-pink-600 transition">Search</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <button id="prev" class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white px-4 py-2 rounded-full text-2xl">❮</button>
+    <button id="next" class="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white px-4 py-2 rounded-full text-2xl">❯</button>
+  </section>
+
+  <!-- 🔥 Latest Anime Cards -->
+  <section class="py-12 sm:py-16 px-4 sm:px-6 bg-gray-950">
+    <h3 class="text-2xl sm:text-3xl font-bold mb-8 text-center text-primary">Latest Releases</h3>
+    <div class="grid gap-6 sm:gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      <div class="bg-glass p-4 rounded-xl shadow-lg backdrop-blur-md hover:scale-105 transition duration-300">
+        <img src="img/61t9ie31jgL._AC_UF1000,1000_QL80_.jpg" class="w-full h-56 object-cover rounded-lg mb-3" />
+        <h4 class="text-lg font-semibold">Attack on Titan</h4>
+        <p class="text-gray-400 text-sm">Action | Drama | 2023</p>
+        <a href="./titan.html" target="_blank"><button class="bg-primary text-white px-4 py-2 mt-3 rounded-full hover:bg-pink-600 transition">Watch Anime</button></a>
+      </div>
+      <div class="bg-glass p-4 rounded-xl shadow-lg backdrop-blur-md hover:scale-105 transition duration-300">
+        <img src="img/Death_Note_Poster.webp" class="w-full h-56 object-cover rounded-lg mb-3" />
+        <h4 class="text-lg font-semibold">Death Note</h4>
+        <p class="text-gray-400 text-sm">Thriller | Mystery | 2006</p>
+        <button class="bg-primary text-white px-4 py-2 mt-3 rounded-full hover:bg-pink-600 transition">Watch Anime</button>
+      </div>
+      <div class="bg-glass p-4 rounded-xl shadow-lg backdrop-blur-md hover:scale-105 transition duration-300">
+        <img src="img/naruto.jpg" class="w-full h-56 object-cover rounded-lg mb-3" />
+        <h4 class="text-lg font-semibold">Naruto</h4>
+        <p class="text-gray-400 text-sm">Adventure | Ninja | 2002</p>
+        <button class="bg-primary text-white px-4 py-2 mt-3 rounded-full hover:bg-pink-600 transition">Watch Anime</button>
+      </div>
+      <div class="bg-glass p-4 rounded-xl shadow-lg backdrop-blur-md hover:scale-105 transition duration-300">
+        <img src="img/demon-slayer-pictures-tsbyd3y88kxirm15.jpg" class="w-full h-56 object-cover rounded-lg mb-3" />
+        <h4 class="text-lg font-semibold">Demon Slayer</h4>
+        <p class="text-gray-400 text-sm">Action | Supernatural | 2019</p>
+        <button class="bg-primary text-white px-4 py-2 mt-3 rounded-full hover:bg-pink-600 transition">Watch Anime</button>
+      </div>
+    
+     <!-- Extra Cards -->
+        <div class="anime-card bg-glass p-4 rounded-xl shadow-lg backdrop-blur-md hover:scale-105 transition duration-300">
+          <img src="img/images (2).jpeg" class="w-full h-56 object-cover rounded-lg mb-3" />
+          <h4 class="text-lg font-semibold">One Piece</h4>
+          <p class="text-gray-400 text-sm">Adventure | Pirates | 1999</p>
+          <button class="bg-primary text-white px-4 py-2 mt-3 rounded-full hover:bg-pink-600 transition">Watch Anime</button>
+        </div>
+        <div class="anime-card bg-glass p-4 rounded-xl shadow-lg backdrop-blur-md hover:scale-105 transition duration-300">
+          <img src="img/p12793542_b_v13_ak.jpg" class="w-full h-56 object-cover rounded-lg mb-3" />
+          <h4 class="text-lg font-semibold">My Hero Academia</h4>
+          <p class="text-gray-400 text-sm">Action | Superheroes | 2016</p>
+          <button class="bg-primary text-white px-4 py-2 mt-3 rounded-full hover:bg-pink-600 transition">Watch Anime</button>
+        </div>
+        <div class="anime-card bg-glass p-4 rounded-xl shadow-lg backdrop-blur-md hover:scale-105 transition duration-300">
+          <img src="img/download (1).jpeg" class="w-full h-56 object-cover rounded-lg mb-3" />
+          <h4 class="text-lg font-semibold">Fullmetal Alchemist: Brotherhood</h4>
+          <p class="text-gray-400 text-sm">Action | Drama | 2009</p>
+          <button class="bg-primary text-white px-4 py-2 mt-3 rounded-full hover:bg-pink-600 transition">Watch Anime</button>
+        </div>
+        <div class="anime-card bg-glass p-4 rounded-xl shadow-lg backdrop-blur-md hover:scale-105 transition duration-300">
+          <img src="img/Art_of_1.jpg" class="w-full h-56 object-cover rounded-lg mb-3" />
+          <h4 class="text-lg font-semibold">Tokyo Ghoul</h4>
+          <p class="text-gray-400 text-sm">Horror | Supernatural | 2014</p>
+          <button class="bg-primary text-white px-4 py-2 mt-3 rounded-full hover:bg-pink-600 transition">Watch Anime</button>
+        </div>
+      </div>
+
+     
+    </div>
+  </section>
+  
+
+  <!-- 🔥 Footer -->
+  <footer class="text-center py-6 bg-gray-900 text-gray-400 border-t border-gray-700 text-sm">
+    © 2025 AnimeVerse. All rights reserved.
+  </footer>
+
+  <!-- ✅ Scripts -->
+  <script>
+    // Navbar Toggle
+    const toggleBtn = document.getElementById('toggleBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    toggleBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Carousel Logic
+    const carousel = document.getElementById('carousel');
+    const slides = carousel.children.length;
+    let currentIndex = 0;
+    let interval;
+
+    function showSlide(index) {
+      carousel.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % slides;
+      showSlide(currentIndex);
+    }
+
+    function prevSlide() {
+      currentIndex = (currentIndex - 1 + slides) % slides;
+      showSlide(currentIndex);
+    }
+
+    function startAutoSlide() {
+      interval = setInterval(nextSlide, 3000);
+    }
+
+    function stopAutoSlide() {
+      clearInterval(interval);
+    }
+
+    document.getElementById('next').addEventListener('click', () => {
+      nextSlide();
+      stopAutoSlide();
+      startAutoSlide();
+    });
+
+    document.getElementById('prev').addEventListener('click', () => {
+      prevSlide();
+      stopAutoSlide();
+      startAutoSlide();
+    });
+
+    startAutoSlide();
+    
+
+  
+  </script>
+
+
+</body>
+</html>
